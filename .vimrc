@@ -41,6 +41,7 @@ syntax on
 set number 
 set modifiable
 set autochdir
+imap jj <Esc>
 
 " NERDTree Stuff
 autocmd vimenter * NERDTree
