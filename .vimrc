@@ -1,3 +1,5 @@
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" Install Vundle ^^
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -42,6 +44,7 @@ set number
 set modifiable
 set autochdir
 imap jj <Esc>
+let NERDTreeMinimalUI=1
 
 " NERDTree Stuff
 autocmd vimenter * NERDTree
