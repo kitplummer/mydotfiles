@@ -3,7 +3,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-colorscheme industry
+colorscheme default
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -18,7 +18,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tpope/vim-fugitive'
-Plugin 'ycm-core/YouCompleteMe'
 Plugin 'elixir-editors/vim-elixir'
 Plugin 'slashmili/alchemist.vim'
 
@@ -43,11 +42,19 @@ syntax on
 set number 
 set modifiable
 set autochdir
+set backspace=indent,eol,start
 imap jj <Esc>
 let NERDTreeMinimalUI=1
+set mouse+=a
 
 " NERDTree Stuff
-autocmd vimenter * NERDTree
+function! StartUp()
+    if 0 == argc()
+        NERDTree
+    end
+endfunction
+
+autocmd VimEnter * call StartUp()
 
 " YCM Stuff
 let g:ycm_server_keep_logfiles = 1
